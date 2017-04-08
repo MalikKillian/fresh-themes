@@ -196,10 +196,12 @@ also doesn't render any content.
 {{#*inline "body-employment" }}
 <div>
   <h3><em>{{ position }}</em>,
-    {{#if url }}
-    <a href="{{{ url }}}">{{ employer }}</a>
-    {{else}}
-    {{ employer }}
+    {{#if employer}}
+      {{#if url }}
+      <a href="{{{ url }}}">{{ employer }}</a>
+      {{else}}
+      {{ employer }}
+      {{/if}}
     {{/if}}
     </h3>
     <span class="tenure">{{dateRange .}}</span>
